@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Labs frontend/Users list</title>
+
+    <script id="usersTpl" type="text/x-jquery-tmpl">
+        <li>
+            <div class="short-info">
+                <div class="picture">
+                    <img src="${picture.medium}" />
+                </div>
+                <div class="last">
+                    <p>${name.last}</p>
+                </div>
+                <div class="first">
+                    <p>${name.first}</p>
+                </div>
+                <div class="username">
+                    <p>${login.username}</p>
+                </div>
+                <div class="phone">
+                    <p>${phone}</p>
+                </div>
+                <div class="state">
+                    <p>${location.state}</p>
+                </div>
+                <div class="toggl-info">
+                    <i class="fa fa-plus display-icon" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="full-info">
+                <div class="name">
+                    <h3>
+                        ${name.first} {{if gender == 'male'}}
+                        <i class="fa fa-male" aria-hidden="true"></i> {{else}}
+                        <i class="fa fa-female" aria-hidden="true"></i> {{/if}}
+                    </h3>
+                </div>
+                <div class="main info-p-size">
+                    <p><b>Username</b> ${login.username}</br>
+                        <b>Registered</b> ${registred}</br>
+                        <b>Email</b> ${email}</br>
+                    </p>
+                </div>
+                <div class="address info-p-size">
+                    <p><b>Address</b> ${location.street}</br>
+                        <b>City</b> ${location.city}</br>
+                        <b>Zid Code</b> ${location.postcode}</br>
+                    </p>
+                </div>
+                <div class="contacts info-p-size">
+                    <p><b>Birthday</b> ${dob}</br>
+                        <b>Phone</b> ${phone}</br>
+                        <b>Cell</b> ${cell}</br>
+                    </p>
+                </div>
+                <div class="picture">
+                    <img src="${picture.medium}" />
+                </div>
+            </div>
+        </li>
+    </script>
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <button class="show-chart" onclick="showChart()">Show chart</button>
+        <input class="search-input" type="text" placeholder="Search" />
+        <ul id="userList" class="user-list">
+        </ul>
+    </div>
+
+    <div id="dialog" class="show-chart-dialog" title="Gender of users">
+        <canvas id="genderChart" width="400" height="400"></canvas>
+    </div>
+
+    <script src="jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="jquery.tmpl.min.js" type="text/javascript"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="Chart.min.js"></script>
+    <script src="script.js" type="text/javascript"></script>
+</body>
+
+</html>
